@@ -11,14 +11,29 @@ public class Jogador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Estas yendo para " + direccione);
+        Debug.Log("Estas yendo a " + direccione);
         Debug.Log(message: $"Tu salú es {salu}");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(message: $"el daño es {damageru}");
+        Debug.Log(message: $"No hay problema!");
 
+        MasDamageru();
+
+        salu --;
+
+        MoviditoMovidito();
+    }
+
+    void MoviditoMovidito()
+    {
+        transform.position += new Vector3 (direccione, 0f, 0f) * Time.deltaTime;
+    }
+
+    void MasDamageru()
+    {
+        damageru++;
     }
 }
